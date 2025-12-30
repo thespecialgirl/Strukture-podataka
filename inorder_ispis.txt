@@ -1,0 +1,4 @@
+Inorder ispis nakon insert funkcije:
+71 64 53 51 45 44 39 37 22 11 
+Inorder ispis nakon replace funkcije:
+0 71 231 45 0 360 37 0 415 0 
