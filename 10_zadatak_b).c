@@ -136,7 +136,7 @@ countryPosition readCountriesFromFile(const char* fileName) {
 			return root;
 		}
 		root = insertSortedCountries(root, newCountry);
-		readTownsFromFile(townFileName,newCountry->townHead);
+		readTownsFromFile(townFileName, newCountry->townHead);
 	}
 	fclose(file);
 	return root;
@@ -180,7 +180,7 @@ int printTowns(townPosition head) {
 int printCountries(countryPosition root) {
 	if (root == NULL) {
 		return 0;
-	}	
+	}
 	printCountries(root->left);			//sortirano po nazivu pa treba inorder sort
 	printf("Drzava: %s\n", root->name);
 	printTowns(root->townHead);
@@ -192,7 +192,7 @@ int printCountries(countryPosition root) {
 //9)fja za trazenje drzave u stablu
 countryPosition findCountry(countryPosition root, const char* name) {
 	if (root == NULL) { return NULL; }
-	int cmp = strcmp(name,root->name);
+	int cmp = strcmp(name, root->name);
 	if (cmp == 0)  return root;
 	else if (cmp < 0)  return findCountry(root->left, name);
 	else return findCountry(root->right, name);
@@ -200,12 +200,12 @@ countryPosition findCountry(countryPosition root, const char* name) {
 
 //10)fja za ispis gradova iznad unesenog br st
 int printBiggerTowns(townPosition head, int limit) {
-	townPosition current =head->next ;
-	while (current!=NULL) {
+	townPosition current = head->next;
+	while (current != NULL) {
 		if (current->population > limit) {
 			printf("\t%s,%d \n", current->name, current->population);
 		}
-			current = current->next;
+		current = current->next;
 	}
 	return 0;
 }
@@ -247,7 +247,7 @@ int freeCountries(countryPosition root) {
 	}
 	freeCountries(root->left);
 	freeCountries(root->right);
-	freeTowns(root->townHead);
+	freeCountries(root->townHead);
 	free(root);
 	return 0;
 }
