@@ -247,7 +247,7 @@ int freeCountries(countryPosition root) {
 	}
 	freeCountries(root->left);
 	freeCountries(root->right);
-	freeCountries(root->townHead);
+	freeTowns(root->townHead);
 	free(root);
 	return 0;
 }
