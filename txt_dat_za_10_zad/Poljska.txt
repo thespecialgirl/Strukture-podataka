@@ -1,0 +1,3 @@
+Krakow,760000
+Szczecin,408105
+Katowice,321000
