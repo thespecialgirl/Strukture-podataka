@@ -1,0 +1,4 @@
+Paris,2102650
+Marseille,808700
+Bordeaux,246586
+Lyon,506615
